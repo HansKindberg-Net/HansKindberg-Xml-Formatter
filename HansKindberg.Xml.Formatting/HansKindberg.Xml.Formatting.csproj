@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A8BA8DD9-BCF3-4213-8B18-00CFF0C016F6}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>HansKindberg.Xml.Formatting</RootNamespace>
+    <AssemblyName>HansKindberg.Xml.Formatting</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+    <CodeAnalysisRuleSet>..\CodeAnalysis\Solution.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+    <CodeAnalysisRuleSet>..\CodeAnalysis\Solution.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>..\HansKindberg.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\CodeAnalysis\SolutionSuppressions.cs">
+      <Link>CodeAnalysis\SolutionSuppressions.cs</Link>
+    </Compile>
+    <Compile Include="..\Properties\SolutionInfo.cs">
+      <Link>Properties\SolutionInfo.cs</Link>
+    </Compile>
+    <Compile Include="CodeAnalysis\AssemblySuppressions.cs" />
+    <Compile Include="Collections\CancelCollectionEventArguments.cs" />
+    <Compile Include="Collections\EventHandledCollection.cs" />
+    <Compile Include="Collections\CollectionEventArguments.cs" />
+    <Compile Include="Configuration\IntegerCollectionValidator.cs" />
+    <Compile Include="Configuration\IntegerCollectionValidatorAttribute.cs" />
+    <Compile Include="DefaultXmlParser.cs" />
+    <Compile Include="IXmlFormat.cs" />
+    <Compile Include="Configuration\XmlFormatSection.cs" />
+    <Compile Include="Configuration\XmlFormatElement.cs" />
+    <Compile Include="Configuration\XmlFormatElementCollection.cs" />
+    <Compile Include="IXmlFormatter.cs" />
+    <Compile Include="IXmlFormatterFactory.cs" />
+    <Compile Include="IXmlParser.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="DefaultXmlFormatter.cs" />
+    <Compile Include="XmlCommentFormat.cs" />
+    <Compile Include="XmlFormatter.cs" />
+    <Compile Include="DefaultXmlFormatterFactory.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\HansKindberg.snk">
+      <Link>HansKindberg.snk</Link>
+    </None>
+    <None Include="HansKindberg.Xml.Formatting.nuspec" />
+  </ItemGroup>
+  <ItemGroup>
+    <CodeAnalysisDictionary Include="..\CodeAnalysis\SolutionDictionary.xml">
+      <Link>CodeAnalysis\SolutionDictionary.xml</Link>
+    </CodeAnalysisDictionary>
+    <CodeAnalysisDictionary Include="CodeAnalysis\AssemblyDictionary.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\HansKindberg.Xml.Linq\HansKindberg.Xml.Linq.csproj">
+      <Project>{702afeab-a250-482d-bd11-8a2168bbc5c5}</Project>
+      <Name>HansKindberg.Xml.Linq</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HansKindberg\HansKindberg.csproj">
+      <Project>{4ab6e3e3-e88f-4758-869f-a06a36ff43e1}</Project>
+      <Name>HansKindberg</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="IO\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>"$(SolutionDir).nuget\NuGet.exe" pack "$(ProjectPath)" -Properties Configuration=$(ConfigurationName)</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

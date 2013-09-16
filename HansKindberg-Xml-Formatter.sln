@@ -1,0 +1,102 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CodeAnalysis", "CodeAnalysis", "{BAC6A19C-4E16-4220-BB93-B659756B1987}"
+	ProjectSection(SolutionItems) = preProject
+		CodeAnalysis\Solution.Extension.ruleset = CodeAnalysis\Solution.Extension.ruleset
+		CodeAnalysis\Solution.ruleset = CodeAnalysis\Solution.ruleset
+		CodeAnalysis\Solution.Tests.ruleset = CodeAnalysis\Solution.Tests.ruleset
+		CodeAnalysis\SolutionDictionary.xml = CodeAnalysis\SolutionDictionary.xml
+		CodeAnalysis\SolutionSuppressions.cs = CodeAnalysis\SolutionSuppressions.cs
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Properties", "Properties", "{7B3A945D-312B-4A32-B650-94A325C21831}"
+	ProjectSection(SolutionItems) = preProject
+		Properties\SolutionInfo.cs = Properties\SolutionInfo.cs
+		Properties\SolutionInfo.Extension.cs = Properties\SolutionInfo.Extension.cs
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{2D5E9FE4-5C92-4534-95AA-2D2B436050B0}"
+	ProjectSection(SolutionItems) = preProject
+		HansKindberg.snk = HansKindberg.snk
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{AF2156A6-046D-4010-8AE0-0D2E2BD34112}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.config = .nuget\NuGet.config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HansKindberg.Xml.Formatting", "HansKindberg.Xml.Formatting\HansKindberg.Xml.Formatting.csproj", "{A8BA8DD9-BCF3-4213-8B18-00CFF0C016F6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HansKindberg.Xml.Formatting.Tests", "HansKindberg.Xml.Formatting.Tests\HansKindberg.Xml.Formatting.Tests.csproj", "{83F62868-9AB1-4575-A47A-7277371D4842}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HansKindberg.VisualStudio.Extensions.XmlFormatter.Tests", "HansKindberg.VisualStudio.Extensions.XmlFormatter.Tests\HansKindberg.VisualStudio.Extensions.XmlFormatter.Tests.csproj", "{951D1DC0-EB3D-436F-A4AB-F4CC15EF850F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HansKindberg.VisualStudio.Extensions.XmlFormatter", "HansKindberg.VisualStudio.Extensions.XmlFormatter\HansKindberg.VisualStudio.Extensions.XmlFormatter.csproj", "{90EE708F-D39E-4F23-AC5C-4FC8672256FD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HansKindberg.Xml.Formatting.IntegrationTests", "HansKindberg.Xml.Formatting.IntegrationTests\HansKindberg.Xml.Formatting.IntegrationTests.csproj", "{87BED5A7-B200-4CFB-912B-8F2576C45A39}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HansKindberg", "HansKindberg\HansKindberg.csproj", "{4AB6E3E3-E88F-4758-869F-A06A36FF43E1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HansKindberg.Xml.Linq", "HansKindberg.Xml.Linq\HansKindberg.Xml.Linq.csproj", "{702AFEAB-A250-482D-BD11-8A2168BBC5C5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HansKindberg.Xml.Linq.Tests", "HansKindberg.Xml.Linq.Tests\HansKindberg.Xml.Linq.Tests.csproj", "{DB839881-FF10-45B5-A93E-48000B136243}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HansKindberg.Xml.Linq.IntegrationTests", "HansKindberg.Xml.Linq.IntegrationTests\HansKindberg.Xml.Linq.IntegrationTests.csproj", "{4551D829-A756-4529-A0C2-748CDF89D327}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HansKindberg.Xml.Linq.ShimTests", "HansKindberg.Xml.Linq.ShimTests\HansKindberg.Xml.Linq.ShimTests.csproj", "{FF228C3C-958F-4F7A-89FB-7F3953AE8D42}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A8BA8DD9-BCF3-4213-8B18-00CFF0C016F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A8BA8DD9-BCF3-4213-8B18-00CFF0C016F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A8BA8DD9-BCF3-4213-8B18-00CFF0C016F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A8BA8DD9-BCF3-4213-8B18-00CFF0C016F6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{83F62868-9AB1-4575-A47A-7277371D4842}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{83F62868-9AB1-4575-A47A-7277371D4842}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{83F62868-9AB1-4575-A47A-7277371D4842}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{83F62868-9AB1-4575-A47A-7277371D4842}.Release|Any CPU.Build.0 = Release|Any CPU
+		{951D1DC0-EB3D-436F-A4AB-F4CC15EF850F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{951D1DC0-EB3D-436F-A4AB-F4CC15EF850F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{951D1DC0-EB3D-436F-A4AB-F4CC15EF850F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{951D1DC0-EB3D-436F-A4AB-F4CC15EF850F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{90EE708F-D39E-4F23-AC5C-4FC8672256FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{90EE708F-D39E-4F23-AC5C-4FC8672256FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{90EE708F-D39E-4F23-AC5C-4FC8672256FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{90EE708F-D39E-4F23-AC5C-4FC8672256FD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{87BED5A7-B200-4CFB-912B-8F2576C45A39}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{87BED5A7-B200-4CFB-912B-8F2576C45A39}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{87BED5A7-B200-4CFB-912B-8F2576C45A39}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{87BED5A7-B200-4CFB-912B-8F2576C45A39}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4AB6E3E3-E88F-4758-869F-A06A36FF43E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4AB6E3E3-E88F-4758-869F-A06A36FF43E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4AB6E3E3-E88F-4758-869F-A06A36FF43E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4AB6E3E3-E88F-4758-869F-A06A36FF43E1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{702AFEAB-A250-482D-BD11-8A2168BBC5C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{702AFEAB-A250-482D-BD11-8A2168BBC5C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{702AFEAB-A250-482D-BD11-8A2168BBC5C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{702AFEAB-A250-482D-BD11-8A2168BBC5C5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DB839881-FF10-45B5-A93E-48000B136243}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DB839881-FF10-45B5-A93E-48000B136243}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DB839881-FF10-45B5-A93E-48000B136243}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DB839881-FF10-45B5-A93E-48000B136243}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4551D829-A756-4529-A0C2-748CDF89D327}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4551D829-A756-4529-A0C2-748CDF89D327}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4551D829-A756-4529-A0C2-748CDF89D327}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4551D829-A756-4529-A0C2-748CDF89D327}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FF228C3C-958F-4F7A-89FB-7F3953AE8D42}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF228C3C-958F-4F7A-89FB-7F3953AE8D42}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF228C3C-958F-4F7A-89FB-7F3953AE8D42}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF228C3C-958F-4F7A-89FB-7F3953AE8D42}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

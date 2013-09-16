@@ -1,0 +1,24 @@
+﻿<?xml version="1.0"?>
+<!--This is a comment.-->
+<?xml-stylesheet href="mystyle.css" title="Compact" type="text/css"?>
+<!DOCTYPE Pubs [
+	<!ELEMENT Pubs (Book+)>
+	<!ELEMENT Book (Title, Author)>
+	<!ELEMENT Title (#PCDATA)>
+	<!ELEMENT Author (#PCDATA)>
+]>
+<Pubs>
+	<!-- Comment -->
+	<?xml-stylesheet href="mystyle.css" title="Compact" type="text/css"?>
+	<Book>
+		<?xml-stylesheet href="mystyle.css" title="Compact" type="text/css"?>
+		<Title>Artifacts of Roman Civilization</Title>
+		<Author>Moreno, Jordao</Author>
+	</Book>
+	<Book>
+		<?xml-stylesheet href="mystyle.css" title="Compact" type="text/css"?>
+		<Title>Midieval Tools and Implements</Title>
+		<Author>Gazit, Inbar</Author>
+	</Book>
+</Pubs>
+<!--This is another comment.-->

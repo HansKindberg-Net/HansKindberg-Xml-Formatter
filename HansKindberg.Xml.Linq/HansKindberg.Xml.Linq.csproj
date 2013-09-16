@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{702AFEAB-A250-482D-BD11-8A2168BBC5C5}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>HansKindberg.Xml.Linq</RootNamespace>
+    <AssemblyName>HansKindberg.Xml.Linq</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+    <CodeAnalysisRuleSet>..\CodeAnalysis\Solution.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+    <CodeAnalysisRuleSet>..\CodeAnalysis\Solution.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>..\HansKindberg.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\codeanalysis\SolutionSuppressions.cs">
+      <Link>CodeAnalysis\SolutionSuppressions.cs</Link>
+    </Compile>
+    <Compile Include="..\Properties\SolutionInfo.cs">
+      <Link>Properties\SolutionInfo.cs</Link>
+    </Compile>
+    <Compile Include="CodeAnalysis\AssemblySuppressions.cs" />
+    <Compile Include="Collections\Generic\Extensions\EnumerableExtension.cs" />
+    <Compile Include="Comparison\XComparer.cs" />
+    <Compile Include="Comparison\IAlphabeticallyComparable.cs" />
+    <Compile Include="Comparison\IIndexComparable.cs" />
+    <Compile Include="Comparison\IPinComparable.cs" />
+    <Compile Include="Comparison\IXAttributeComparerSettings.cs" />
+    <Compile Include="Comparison\IXElementComparerSettings.cs" />
+    <Compile Include="Comparison\IXNodeComparerSettings.cs" />
+    <Compile Include="Comparison\XAttributeComparer.cs" />
+    <Compile Include="Comparison\XElementComparer.cs" />
+    <Compile Include="Comparison\XNodeComparer.cs" />
+    <Compile Include="Extensions\XAttributeExtension.cs" />
+    <Compile Include="Extensions\XElementExtension.cs" />
+    <Compile Include="Extensions\XNodeExtension.cs" />
+    <Compile Include="IXAttribute.cs" />
+    <Compile Include="IXComment.cs" />
+    <Compile Include="IXContainer.cs" />
+    <Compile Include="IXDeclaration.cs" />
+    <Compile Include="IXDocument.cs" />
+    <Compile Include="IXElement.cs" />
+    <Compile Include="IXName.cs" />
+    <Compile Include="IXNamespace.cs" />
+    <Compile Include="IXObject.cs" />
+    <Compile Include="XCommentWrapper.cs" />
+    <Compile Include="XContainerWrapper.cs" />
+    <Compile Include="XDeclarationWrapper.cs" />
+    <Compile Include="XDocumentWrapper.cs" />
+    <Compile Include="XElementWrapper.cs" />
+    <Compile Include="IXNode.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="XAttributeWrapper.cs" />
+    <Compile Include="XNamespaceWrapper.cs" />
+    <Compile Include="XNameWrapper.cs" />
+    <Compile Include="XNodeWrapper.cs" />
+    <Compile Include="XObjectWrapper.cs" />
+    <Compile Include="InternalXObjectWrapper.cs" />
+    <Compile Include="XStandalone.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <CodeAnalysisDictionary Include="CodeAnalysis\AssemblyDictionary.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <CodeAnalysisDictionary Include="..\codeanalysis\SolutionDictionary.xml">
+      <Link>CodeAnalysis\SolutionDictionary.xml</Link>
+    </CodeAnalysisDictionary>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\HansKindberg.snk">
+      <Link>HansKindberg.snk</Link>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\HansKindberg\HansKindberg.csproj">
+      <Project>{4ab6e3e3-e88f-4758-869f-a06a36ff43e1}</Project>
+      <Name>HansKindberg</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
