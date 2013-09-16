@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Text;
@@ -179,7 +180,17 @@ namespace HansKindberg.Xml.Formatting
 						string commentAsXml = "<root>" + xmlCommentValue + "</root>";
 						IXDocument xmlDocument = this.XmlParser.Parse(commentAsXml);
 
-						if(xmlDocument.Root.Nodes.Count() > 1)
+						bool formatAsXml = xmlDocument.Root.Nodes.Count() > 1;
+
+						if(!formatAsXml)
+						{
+							IEnumerable<IXElement> elements = xmlDocument.Root.Nodes.OfType<IXElement>().ToArray();
+
+							if(elements.Count() == 1 && elements.ElementAt(0).Nodes.Any())
+								formatAsXml = true;
+						}
+
+						if(formatAsXml)
 						{
 							commentAsXml = this.Format(commentAsXml);
 							commentAsXml = commentAsXml.Substring(6, commentAsXml.Length - 13);
@@ -187,7 +198,10 @@ namespace HansKindberg.Xml.Formatting
 							unTrim = false;
 						}
 					}
-					catch {}
+					catch(Exception exception)
+					{
+						Debug.WriteLine(exception.Message);
+					}
 				}
 
 				if(unTrim)
