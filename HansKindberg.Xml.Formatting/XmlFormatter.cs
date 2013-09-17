@@ -144,7 +144,7 @@ namespace HansKindberg.Xml.Formatting
 			if(xmlAttribute == null)
 				throw new ArgumentNullException("xmlAttribute");
 
-			if(this.XmlFormat.AttributeNamesToCorrectCommaSeparatedValuesFor != null && this.XmlFormat.AttributeNamesToCorrectCommaSeparatedValuesFor.Contains(xmlAttribute.Name.LocalName))
+			if(this.XmlFormat.AttributeNamesToCorrectCommaSeparatedValuesFor != null && this.XmlFormat.AttributeNamesToCorrectCommaSeparatedValuesFor.Contains(xmlAttribute.Name))
 				this.CorrectCommaSeparatedValue(xmlAttribute);
 		}
 
@@ -301,7 +301,7 @@ namespace HansKindberg.Xml.Formatting
 
 			this.WriteIndent(xmlElement, output);
 
-			output.Append("<" + xmlElement.Name.LocalName);
+			output.Append("<" + xmlElement.Name);
 
 			bool newLineOnAttributes = this.XmlFormat.Indent && this.XmlFormat.NewLineOnAttributes && xmlElement.Attributes.Count() > this.XmlFormat.MinimumNumberOfAttributesForNewLineOnAttributes;
 
@@ -312,7 +312,7 @@ namespace HansKindberg.Xml.Formatting
 				else
 					output.Append(" ");
 
-				output.Append(xmlAttribute.Name.LocalName + "=" + "\"" + xmlAttribute.Value + "\"");
+				output.Append(xmlAttribute.Name + "=" + "\"" + xmlAttribute.Value + "\"");
 			}
 
 			if(newLineOnAttributes)
@@ -360,7 +360,7 @@ namespace HansKindberg.Xml.Formatting
 				this.WriteIndent(xmlElement.Level, output);
 			}
 
-			output.Append("</" + xmlElement.Name.LocalName + ">");
+			output.Append("</" + xmlElement.Name + ">");
 		}
 
 		protected internal virtual void WriteXmlNode(IXNode xmlNode, StringBuilder output)

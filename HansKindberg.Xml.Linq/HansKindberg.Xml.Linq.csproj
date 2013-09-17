@@ -54,6 +54,7 @@
     </Compile>
     <Compile Include="CodeAnalysis\AssemblySuppressions.cs" />
     <Compile Include="Collections\Generic\Extensions\EnumerableExtension.cs" />
+    <Compile Include="Comparison\Extensions\AlphabeticallyComparableExtension.cs" />
     <Compile Include="Comparison\XComparer.cs" />
     <Compile Include="Comparison\IAlphabeticallyComparable.cs" />
     <Compile Include="Comparison\IIndexComparable.cs" />
@@ -65,7 +66,6 @@
     <Compile Include="Comparison\XElementComparer.cs" />
     <Compile Include="Comparison\XNodeComparer.cs" />
     <Compile Include="Extensions\XAttributeExtension.cs" />
-    <Compile Include="Extensions\XElementExtension.cs" />
     <Compile Include="Extensions\XNodeExtension.cs" />
     <Compile Include="IXAttribute.cs" />
     <Compile Include="IXComment.cs" />

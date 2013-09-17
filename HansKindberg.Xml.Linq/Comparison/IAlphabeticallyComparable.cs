@@ -4,7 +4,7 @@
 	{
 		#region Properties
 
-		IXName Name { get; }
+		string Name { get; }
 		string Value { get; }
 
 		#endregion

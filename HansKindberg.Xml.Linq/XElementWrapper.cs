@@ -4,7 +4,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
 using System.Linq;
 using System.Xml.Linq;
-using HansKindberg.Xml.Linq.Extensions;
+using HansKindberg.Xml.Linq.Comparison.Extensions;
 
 namespace HansKindberg.Xml.Linq
 {
@@ -14,8 +14,9 @@ namespace HansKindberg.Xml.Linq
 
 		private IEnumerable<IXNode> _associatedNodes;
 		private IEnumerable<IXAttribute> _attributes;
-		private ValueContainer<IXName> _name;
+		private ValueContainer<string> _name;
 		private ValueContainer<string> _path;
+		private ValueContainer<IXName> _xName;
 
 		#endregion
 
@@ -56,12 +57,12 @@ namespace HansKindberg.Xml.Linq
 			get { return this._attributes ?? (this._attributes = this.XElement.Attributes().Select(attribute => (IXAttribute) (XAttributeWrapper) attribute)); }
 		}
 
-		public virtual IXName Name
+		public virtual string Name
 		{
 			get
 			{
 				if(this._name == null)
-					this._name = new ValueContainer<IXName>((XNameWrapper) this.XElement.Name);
+					this._name = new ValueContainer<string>(this.XElement.ToString(SaveOptions.None).Split(" />".ToCharArray(), StringSplitOptions.None)[0].Substring(1));
 
 				return this._name.Value;
 			}
@@ -72,7 +73,7 @@ namespace HansKindberg.Xml.Linq
 			get
 			{
 				if(this._path == null)
-					this._path = new ValueContainer<string>(this.XElement.Path());
+					this._path = new ValueContainer<string>((this.Parent != null ? this.Parent.Path : string.Empty) + "/" + this.Name);
 
 				return this._path.Value;
 			}
@@ -89,6 +90,17 @@ namespace HansKindberg.Xml.Linq
 			get { return this.XNode; }
 		}
 
+		public virtual IXName XName
+		{
+			get
+			{
+				if(this._xName == null)
+					this._xName = new ValueContainer<IXName>((XNameWrapper) this.XElement.Name);
+
+				return this._xName.Value;
+			}
+		}
+
 		#endregion
 
 		#region Methods
@@ -101,6 +113,7 @@ namespace HansKindberg.Xml.Linq
 			this._attributes = null;
 			this._name = null;
 			this._path = null;
+			this._xName = null;
 		}
 
 		[SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly", MessageId = "x")]
@@ -111,7 +124,7 @@ namespace HansKindberg.Xml.Linq
 
 		public virtual int? GetPinIndex(IEnumerable<string> namesToPinFirst)
 		{
-			return this.XElement.GetPinIndex(namesToPinFirst);
+			return AlphabeticallyComparableExtension.GetPinIndex(this, namesToPinFirst);
 		}
 
 		public override void Sort(IComparer<IXNode> xNodeComparer, IComparer<IXAttribute> xAttributeComparer)

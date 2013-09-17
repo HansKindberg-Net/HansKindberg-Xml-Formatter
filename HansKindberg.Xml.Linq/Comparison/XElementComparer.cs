@@ -156,7 +156,7 @@ namespace HansKindberg.Xml.Linq.Comparison
 			if(xElement.Parent == null)
 				return true;
 
-			if(this.XElementComparerSettings.ElementNamesToExcludeChildrenFromSortingAlphabetically != null && this.XElementComparerSettings.ElementNamesToExcludeChildrenFromSortingAlphabetically.Contains(xElement.Parent.Name.LocalName))
+			if(this.XElementComparerSettings.ElementNamesToExcludeChildrenFromSortingAlphabetically != null && this.XElementComparerSettings.ElementNamesToExcludeChildrenFromSortingAlphabetically.Contains(xElement.Parent.Name))
 				return false;
 
 			if(this.XElementComparerSettings.ElementPathsToExcludeChildrenFromSortingAlphabetically != null && this.XElementComparerSettings.ElementPathsToExcludeChildrenFromSortingAlphabetically.Contains(xElement.Parent.Path))

@@ -33,7 +33,7 @@ namespace HansKindberg.Xml.Linq.Comparison
 			int? compare = null;
 
 			if(this.SortAlphabetically(firstItem, secondItem))
-				compare = this.CompareAlphabeticalValue(firstItem != null && firstItem.Name != null ? firstItem.Name.LocalName : null, secondItem != null && secondItem.Name != null ? secondItem.Name.LocalName : null, nameComparison, alphabeticalSortDirection);
+				compare = this.CompareAlphabeticalValue(firstItem != null ? firstItem.Name : null, secondItem != null ? secondItem.Name : null, nameComparison, alphabeticalSortDirection);
 
 			return compare;
 		}

@@ -12,6 +12,7 @@ namespace HansKindberg.Xml.Linq
 		IEnumerable<IXAttribute> Attributes { get; }
 		string Path { get; }
 		new string Value { get; set; }
+		IXName XName { get; }
 
 		#endregion
 

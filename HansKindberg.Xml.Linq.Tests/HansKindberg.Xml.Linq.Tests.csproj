@@ -77,7 +77,7 @@
       <Link>Properties\SolutionInfo.cs</Link>
     </Compile>
     <Compile Include="CodeAnalysis\AssemblySuppressions.cs" />
-    <Compile Include="Extensions\XElementExtensionTest.cs" />
+    <Compile Include="Comparison\Extensions\AlphabeticallyComparableExtensionTest.cs" />
     <Compile Include="Extensions\XNodeExtensionTest.cs" />
     <Compile Include="Extensions\XAttributeExtensionTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

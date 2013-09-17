@@ -10,6 +10,7 @@ namespace HansKindberg.Xml.Linq
 
 		string Path { get; }
 		new string Value { get; set; }
+		IXName XName { get; }
 
 		#endregion
 	}
