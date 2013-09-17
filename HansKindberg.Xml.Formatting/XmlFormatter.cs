@@ -180,23 +180,14 @@ namespace HansKindberg.Xml.Formatting
 						string commentAsXml = "<root>" + xmlCommentValue + "</root>";
 						IXDocument xmlDocument = this.XmlParser.Parse(commentAsXml);
 
-						bool formatAsXml = xmlDocument.Root.Nodes.Count() > 1;
+						commentAsXml = this.Format(commentAsXml);
+						commentAsXml = commentAsXml.Substring(6, commentAsXml.Length - 13);
+						xmlCommentValue = commentAsXml;
 
-						if(!formatAsXml)
-						{
-							IEnumerable<IXElement> elements = xmlDocument.Root.Nodes.OfType<IXElement>().ToArray();
-
-							if(elements.Count() == 1 && elements.ElementAt(0).Nodes.Any())
-								formatAsXml = true;
-						}
-
-						if(formatAsXml)
-						{
-							commentAsXml = this.Format(commentAsXml);
-							commentAsXml = commentAsXml.Substring(6, commentAsXml.Length - 13);
-							xmlCommentValue = commentAsXml;
+						if(xmlDocument.Root.Nodes.Count() == 1)
+							xmlCommentValue = xmlCommentValue.Trim();
+						else
 							unTrim = false;
-						}
 					}
 					catch(Exception exception)
 					{
@@ -253,7 +244,7 @@ namespace HansKindberg.Xml.Formatting
 				foreach(string xmlCommentLine in xmlCommmentLines)
 				{
 					this.WriteIndent(xmlComment, output);
-					output.Append(xmlCommentLine);
+					output.Append(xmlCommentLine.TrimEnd(" ".ToCharArray()));
 				}
 
 				return;
