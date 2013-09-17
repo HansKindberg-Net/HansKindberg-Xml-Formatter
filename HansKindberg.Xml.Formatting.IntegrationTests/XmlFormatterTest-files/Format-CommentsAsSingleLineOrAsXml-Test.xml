@@ -1,0 +1,2 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root><!--<add type="first-type,first-assembly" name="first"></add>--><!--<collection><add type="second-type,second-assembly" name="second"></add><add type="first-type,first-assembly" name="first"></add></collection>--><!--Comment<collection><add type="second-type,second-assembly" name="second"></add><add type="first-type,first-assembly" name="first"></add></collection>--></root>

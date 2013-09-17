@@ -180,14 +180,28 @@ namespace HansKindberg.Xml.Formatting
 						string commentAsXml = "<root>" + xmlCommentValue + "</root>";
 						IXDocument xmlDocument = this.XmlParser.Parse(commentAsXml);
 
-						commentAsXml = this.Format(commentAsXml);
-						commentAsXml = commentAsXml.Substring(6, commentAsXml.Length - 13);
-						xmlCommentValue = commentAsXml;
+						IEnumerable<IXNode> nodes = xmlDocument.Root.Nodes.ToArray();
 
-						if(xmlDocument.Root.Nodes.Count() == 1)
-							xmlCommentValue = xmlCommentValue.Trim();
-						else
-							unTrim = false;
+						if(nodes.Any() && (nodes.Count() > 1 || !(nodes.ElementAt(0) is IXText)))
+						{
+							commentAsXml = this.Format(commentAsXml);
+							commentAsXml = commentAsXml.Substring(6, commentAsXml.Length - 13);
+							xmlCommentValue = commentAsXml;
+
+							if(nodes.Count() == 1)
+							{
+								IXElement element = nodes.ElementAt(0) as IXElement;
+
+								if(element != null && element.Nodes.Any())
+									unTrim = false;
+								else
+									xmlCommentValue = xmlCommentValue.Trim();
+							}
+							else
+							{
+								unTrim = false;
+							}
+						}
 					}
 					catch(Exception exception)
 					{

@@ -13,9 +13,50 @@ namespace HansKindberg.Xml.Formatting.IntegrationTests
 	{
 		#region Methods
 
+		private static XmlFormatElement CreateDefaultXmlFormat()
+		{
+			return new XmlFormatElement
+				{
+					AttributeNameComparison = StringComparison.OrdinalIgnoreCase,
+					AttributeNamesToCorrectCommaSeparatedValuesForInternal = "type",
+					AttributeNamesToPinFirstInternal = "key, name",
+					AttributesAlphabeticalSortDirection = ListSortDirection.Ascending,
+					AttributeValueComparison = StringComparison.OrdinalIgnoreCase,
+					CloseEmptyElements = true,
+					CommentFormat = XmlCommentFormat.SingleLineOrAsXml,
+					ElementLevelsToExcludeFromSortingAlphabeticallyInternal = string.Empty,
+					ElementNameComparison = StringComparison.OrdinalIgnoreCase,
+					ElementNamesToExcludeChildrenFromSortingAlphabeticallyInternal = "handlers, httpHandlers, httpModules, modules",
+					ElementNamesToPinFirstInternal = "clear, configSections",
+					ElementPathsToExcludeChildrenFromSortingAlphabeticallyInternal = string.Empty,
+					ElementPathsToInvolveChildElementWhenSortingElementsAlphabeticallyInternal = "/configuration/runtime/assemblyBinding/dependentAssembly",
+					ElementsAlphabeticalSortDirection = ListSortDirection.Ascending,
+					Indent = true,
+					IndentString = "\t",
+					InvolveAttributesWhenSortingElementsAlphabetically = true,
+					MinimumNumberOfAttributesForNewLineOnAttributes = 4,
+					Name = "Test",
+					NewLineOnAttributes = true,
+					NewLineString = Environment.NewLine,
+					OmitComments = false,
+					OmitXmlDeclaration = false,
+					SortAttributesAlphabetically = true,
+					SortElementsAlphabetically = true
+				};
+		}
+
 		private static DefaultXmlFormatter CreateXmlFormatter(IXmlFormat xmlFormat)
 		{
 			return new DefaultXmlFormatter(xmlFormat);
+		}
+
+		[TestMethod]
+		public void Format_CommentsAsSingleLineOrAsXml_Test()
+		{
+			string xml = GetXmlFromFile("Format-CommentsAsSingleLineOrAsXml-Test.xml");
+			string expectedFormattedXml = GetXmlFromFile("Format-CommentsAsSingleLineOrAsXml-Test.Expected.xml");
+
+			Assert.AreEqual(expectedFormattedXml, CreateXmlFormatter(CreateDefaultXmlFormat()).Format(xml));
 		}
 
 		[TestMethod]

@@ -117,6 +117,13 @@ namespace HansKindberg.Xml.Linq
 					continue;
 				}
 
+				XText text = node as XText;
+				if(text != null)
+				{
+					nodeList.Add((XTextWrapper) text);
+					continue;
+				}
+
 				nodeList.Add((XNodeWrapper) node);
 			}
 

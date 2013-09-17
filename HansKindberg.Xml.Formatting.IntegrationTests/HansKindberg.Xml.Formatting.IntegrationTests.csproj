@@ -116,6 +116,10 @@
       <SubType>Designer</SubType>
     </None>
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="XmlFormatterTest-files\Format-CommentsAsSingleLineOrAsXml-Test.Expected.xml" />
+    <Content Include="XmlFormatterTest-files\Format-CommentsAsSingleLineOrAsXml-Test.xml" />
+  </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>

@@ -76,6 +76,7 @@
     <Compile Include="IXName.cs" />
     <Compile Include="IXNamespace.cs" />
     <Compile Include="IXObject.cs" />
+    <Compile Include="IXText.cs" />
     <Compile Include="XCommentWrapper.cs" />
     <Compile Include="XContainerWrapper.cs" />
     <Compile Include="XDeclarationWrapper.cs" />
@@ -90,6 +91,7 @@
     <Compile Include="XObjectWrapper.cs" />
     <Compile Include="InternalXObjectWrapper.cs" />
     <Compile Include="XStandalone.cs" />
+    <Compile Include="XTextWrapper.cs" />
   </ItemGroup>
   <ItemGroup>
     <CodeAnalysisDictionary Include="CodeAnalysis\AssemblyDictionary.xml" />
