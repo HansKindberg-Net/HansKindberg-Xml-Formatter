@@ -259,6 +259,9 @@ namespace HansKindberg.Xml.Formatting
 			if(output == null)
 				throw new ArgumentNullException("output");
 
+			if(this.XmlFormat.OmitComments)
+				return;
+
 			if(this.FormatComments && this.XmlFormat.CommentFormat == XmlCommentFormat.SingleLineOrAsXml)
 			{
 				var xmlCommmentLines = xmlComment.ToString().Split(new[] {this.XmlFormat.NewLineString}, StringSplitOptions.None);
