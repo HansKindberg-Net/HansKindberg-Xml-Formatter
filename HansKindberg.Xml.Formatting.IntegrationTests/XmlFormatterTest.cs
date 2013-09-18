@@ -60,6 +60,15 @@ namespace HansKindberg.Xml.Formatting.IntegrationTests
 		}
 
 		[TestMethod]
+		public void Format_ElementWithSingleValue_Test()
+		{
+			string xml = GetXmlFromFile("Format-ElementWithSingleValue-Test.xml");
+			string expectedFormattedXml = GetXmlFromFile("Format-ElementWithSingleValue-Test.Expected.xml");
+
+			Assert.AreEqual(expectedFormattedXml, CreateXmlFormatter(CreateDefaultXmlFormat()).Format(xml));
+		}
+
+		[TestMethod]
 		public void Format_WebConfigWithComments_Test()
 		{
 			Assert.Inconclusive("Fix this test");

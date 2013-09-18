@@ -117,6 +117,8 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="XmlFormatterTest-files\Format-ElementWithSingleValue-Test.Expected.xml" />
+    <Content Include="XmlFormatterTest-files\Format-ElementWithSingleValue-Test.xml" />
     <Content Include="XmlFormatterTest-files\Format-CommentsAsSingleLineOrAsXml-Test.Expected.xml" />
     <Content Include="XmlFormatterTest-files\Format-CommentsAsSingleLineOrAsXml-Test.xml" />
   </ItemGroup>

@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<element>
+		Text, text, text, text 
+		<!-- Comment -->
+		Text, text, text, text 
+		<!-- Comment -->
+	</element>
+	<elementWithSingleValue>Text, text, text, text </elementWithSingleValue>
+</root>

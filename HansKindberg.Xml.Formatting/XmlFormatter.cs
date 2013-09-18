@@ -347,20 +347,6 @@ namespace HansKindberg.Xml.Formatting
 
 			if(!xmlElement.Nodes.Any())
 			{
-				//if (!this.XmlFormat.OmitComments)
-				//{
-				//	XmlDocument xmlDocument = new XmlDocument();
-				//	xmlDocument.LoadXml(element.ToString());
-
-				//	// ReSharper disable PossibleNullReferenceException
-				//	output.Append(xmlDocument.DocumentElement.InnerXml);
-				//	// ReSharper restore PossibleNullReferenceException
-				//}
-				//else
-				//{
-				//	output.Append(element.Value);
-				//}
-
 				output.Append(xmlElement.Value);
 
 				if(newLineOnAttributes)
@@ -368,12 +354,19 @@ namespace HansKindberg.Xml.Formatting
 			}
 			else
 			{
-				foreach(IXNode xmlNode in xmlElement.Nodes)
+				if(xmlElement.Nodes.Count() == 1 && xmlElement.Nodes.ElementAt(0) is IXText)
 				{
-					this.WriteXmlNode(xmlNode, output);
+					output.Append(((IXText) xmlElement.Nodes.ElementAt(0)).Value);
 				}
+				else
+				{
+					foreach(IXNode xmlNode in xmlElement.Nodes)
+					{
+						this.WriteXmlNode(xmlNode, output);
+					}
 
-				this.WriteIndent(xmlElement.Level, output);
+					this.WriteIndent(xmlElement.Level, output);
+				}
 			}
 
 			output.Append("</" + xmlElement.Name + ">");
