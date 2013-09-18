@@ -192,7 +192,7 @@ namespace HansKindberg.Xml.Formatting
 							{
 								IXElement element = nodes.ElementAt(0) as IXElement;
 
-								if(element != null && element.Nodes.Any())
+								if(element != null && (element.Nodes.Any() || this.UseNewLineOnAttributes(element)))
 									unTrim = false;
 								else
 									xmlCommentValue = xmlCommentValue.Trim();
@@ -217,6 +217,14 @@ namespace HansKindberg.Xml.Formatting
 		}
 
 		public virtual void FormatElement(IXElement xmlElement) {}
+
+		protected internal virtual bool UseNewLineOnAttributes(IXElement xmlElement)
+		{
+			if(xmlElement == null)
+				throw new ArgumentNullException("xmlElement");
+
+			return this.XmlFormat.Indent && this.XmlFormat.NewLineOnAttributes && xmlElement.Attributes.Any() && xmlElement.Attributes.Count() >= this.XmlFormat.MinimumNumberOfAttributesForNewLineOnAttributes;
+		}
 
 		protected internal virtual void WriteIndent(IXNode xmlNode, StringBuilder output)
 		{
@@ -308,7 +316,7 @@ namespace HansKindberg.Xml.Formatting
 
 			output.Append("<" + xmlElement.Name);
 
-			bool newLineOnAttributes = this.XmlFormat.Indent && this.XmlFormat.NewLineOnAttributes && xmlElement.Attributes.Count() > this.XmlFormat.MinimumNumberOfAttributesForNewLineOnAttributes;
+			bool newLineOnAttributes = this.UseNewLineOnAttributes(xmlElement);
 
 			foreach(IXAttribute xmlAttribute in xmlElement.Attributes)
 			{

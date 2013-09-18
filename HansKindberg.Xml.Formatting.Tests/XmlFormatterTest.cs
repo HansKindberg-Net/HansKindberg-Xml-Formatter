@@ -58,6 +58,36 @@ namespace HansKindberg.Xml.Formatting.Tests
 		}
 
 		[TestMethod]
+		public void Format_IfNewLineOnAttributesIsSetToTrueAndAttributesAreEqualToMinimumNumberOfAttributesForNewLineOnAttributes_ShouldReturnAStringWithAttributesOnAnewLine()
+		{
+			const string xml = "<?xml version=\"1.0\" encoding=\"utf-8\"?><root><element a=\"A\" b=\"B\" c=\"C\"></element></root>";
+			string expectedXml = "<?xml version=\"1.0\" encoding=\"utf-8\"?>" + Environment.NewLine + "<root>" + Environment.NewLine + "\t" + "<element" + Environment.NewLine + "\t" + "\t" + "a=\"A\"" + Environment.NewLine + "\t" + "\t" + "b=\"B\"" + Environment.NewLine + "\t" + "\t" + "c=\"C\"" + Environment.NewLine + "\t" + ">" + Environment.NewLine + "\t" + "</element>" + Environment.NewLine + "</root>";
+			Mock<IXmlFormat> xmlFormatMock = new Mock<IXmlFormat>();
+			xmlFormatMock.Setup(xmlFormat => xmlFormat.Indent).Returns(true);
+			xmlFormatMock.Setup(xmlFormat => xmlFormat.IndentString).Returns("\t");
+			xmlFormatMock.Setup(xmlFormat => xmlFormat.MinimumNumberOfAttributesForNewLineOnAttributes).Returns(3);
+			xmlFormatMock.Setup(xmlFormat => xmlFormat.NewLineString).Returns(Environment.NewLine);
+			xmlFormatMock.Setup(xmlFormat => xmlFormat.NewLineOnAttributes).Returns(true);
+			string formattedXml = CreateXmlFormatter(xmlFormatMock.Object).Format(xml);
+			Assert.AreEqual(expectedXml, formattedXml);
+		}
+
+		[TestMethod]
+		public void Format_IfNewLineOnAttributesIsSetToTrueAndAttributesAreLessThanMinimumNumberOfAttributesForNewLineOnAttributes_ShouldNotReturnAStringWithAttributesOnAnewLine()
+		{
+			const string xml = "<?xml version=\"1.0\" encoding=\"utf-8\"?><root><element a=\"A\" b=\"B\" c=\"C\"></element></root>";
+			string expectedXml = "<?xml version=\"1.0\" encoding=\"utf-8\"?>" + Environment.NewLine + "<root>" + Environment.NewLine + "\t" + "<element a=\"A\" b=\"B\" c=\"C\"></element>" + Environment.NewLine + "</root>";
+			Mock<IXmlFormat> xmlFormatMock = new Mock<IXmlFormat>();
+			xmlFormatMock.Setup(xmlFormat => xmlFormat.Indent).Returns(true);
+			xmlFormatMock.Setup(xmlFormat => xmlFormat.IndentString).Returns("\t");
+			xmlFormatMock.Setup(xmlFormat => xmlFormat.MinimumNumberOfAttributesForNewLineOnAttributes).Returns(4);
+			xmlFormatMock.Setup(xmlFormat => xmlFormat.NewLineString).Returns(Environment.NewLine);
+			xmlFormatMock.Setup(xmlFormat => xmlFormat.NewLineOnAttributes).Returns(true);
+			string formattedXml = CreateXmlFormatter(xmlFormatMock.Object).Format(xml);
+			Assert.AreEqual(expectedXml, formattedXml);
+		}
+
+		[TestMethod]
 		public void Format_IfNewLineOnAttributesIsSetToTrueAndAttributesAreMoreThanMinimumNumberOfAttributesForNewLineOnAttributes_ShouldReturnAStringWithAttributesOnAnewLine()
 		{
 			const string xml = "<?xml version=\"1.0\" encoding=\"utf-8\"?><root><element a=\"A\" b=\"B\" c=\"C\"></element></root>";
@@ -65,7 +95,7 @@ namespace HansKindberg.Xml.Formatting.Tests
 			Mock<IXmlFormat> xmlFormatMock = new Mock<IXmlFormat>();
 			xmlFormatMock.Setup(xmlFormat => xmlFormat.Indent).Returns(true);
 			xmlFormatMock.Setup(xmlFormat => xmlFormat.IndentString).Returns("\t");
-			xmlFormatMock.Setup(xmlFormat => xmlFormat.MinimumNumberOfAttributesForNewLineOnAttributes).Returns(0);
+			xmlFormatMock.Setup(xmlFormat => xmlFormat.MinimumNumberOfAttributesForNewLineOnAttributes).Returns(2);
 			xmlFormatMock.Setup(xmlFormat => xmlFormat.NewLineString).Returns(Environment.NewLine);
 			xmlFormatMock.Setup(xmlFormat => xmlFormat.NewLineOnAttributes).Returns(true);
 			string formattedXml = CreateXmlFormatter(xmlFormatMock.Object).Format(xml);

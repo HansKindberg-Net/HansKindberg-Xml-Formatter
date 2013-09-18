@@ -34,7 +34,7 @@ namespace HansKindberg.Xml.Formatting.IntegrationTests
 					Indent = true,
 					IndentString = "\t",
 					InvolveAttributesWhenSortingElementsAlphabetically = true,
-					MinimumNumberOfAttributesForNewLineOnAttributes = 4,
+					MinimumNumberOfAttributesForNewLineOnAttributes = 5,
 					Name = "Test",
 					NewLineOnAttributes = true,
 					NewLineString = Environment.NewLine,
