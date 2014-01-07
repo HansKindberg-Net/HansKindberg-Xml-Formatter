@@ -2,7 +2,7 @@
 using HansKindberg.VisualStudio.Extensions.XmlFormatter.Tools.Options;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace HansKindberg.VisualStudio.Extensions.XmlFormatter.Tests.Tools.Options
+namespace HansKindberg.VisualStudio.Extensions.XmlFormatter.UnitTests.Tools.Options
 {
 	[TestClass]
 	public class XmlFormatSettingTest

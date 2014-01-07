@@ -7,7 +7,7 @@ using System.Xml.Linq;
 using HansKindberg.Xml.Linq.Extensions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace HansKindberg.Xml.Linq.Tests.Extensions
+namespace HansKindberg.Xml.Linq.UnitTests.Extensions
 {
 	[TestClass]
 	public class XAttributeExtensionTest

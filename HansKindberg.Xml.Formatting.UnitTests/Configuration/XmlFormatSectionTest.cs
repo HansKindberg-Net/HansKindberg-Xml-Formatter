@@ -1,7 +1,7 @@
 ﻿using HansKindberg.Xml.Formatting.Configuration;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace HansKindberg.Xml.Formatting.Tests.Configuration
+namespace HansKindberg.Xml.Formatting.UnitTests.Configuration
 {
 	[TestClass]
 	public class XmlFormatSectionTest

@@ -1,7 +1,7 @@
 ﻿using System.Reflection;
 using System.Runtime.InteropServices;
 
-[assembly: AssemblyDescription("Tests for HansKindberg.Xml.Linq.")]
+[assembly: AssemblyDescription("Unit-tests for HansKindberg.Xml.Linq.")]
 [assembly: Guid("a2be7b67-3d00-480e-8df0-1fffaf49fb85")]
 // ReSharper disable CheckNamespace
 internal static class AssemblyInfo
@@ -9,7 +9,7 @@ internal static class AssemblyInfo
 {
 	#region Fields
 
-	internal const string AssemblyName = "HansKindberg.Xml.Linq.Tests";
+	internal const string AssemblyName = "HansKindberg.Xml.Linq.UnitTests";
 
 	#endregion
 }

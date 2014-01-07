@@ -3,12 +3,12 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{951D1DC0-EB3D-436F-A4AB-F4CC15EF850F}</ProjectGuid>
+    <ProjectGuid>{DB839881-FF10-45B5-A93E-48000B136243}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>HansKindberg.VisualStudio.Extensions.XmlFormatter.Tests</RootNamespace>
-    <AssemblyName>HansKindberg.VisualStudio.Extensions.XmlFormatter.Tests</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <RootNamespace>HansKindberg.Xml.Linq.UnitTests</RootNamespace>
+    <AssemblyName>HansKindberg.Xml.Linq.UnitTests</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -47,21 +47,15 @@
     <AssemblyOriginatorKeyFile>..\HansKindberg.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.VisualStudio.OLE.Interop, Version=7.1.40304.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-    <Reference Include="Microsoft.VisualStudio.Shell.11.0, Version=11.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
-    <Reference Include="Microsoft.VisualStudio.Shell.Interop, Version=7.1.40304.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-    <Reference Include="Microsoft.VisualStudio.Shell.Interop.10.0, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <EmbedInteropTypes>True</EmbedInteropTypes>
-    </Reference>
-    <Reference Include="Microsoft.VisualStudio.Shell.Interop.8.0, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-    <Reference Include="Microsoft.VisualStudio.Shell.Interop.9.0, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-    <Reference Include="StructureMap">
-      <HintPath>..\packages\structuremap.2.6.4.1\lib\net40\StructureMap.dll</HintPath>
+    <Reference Include="Moq">
+      <HintPath>..\packages\Moq.4.1.1308.2321\lib\net40\Moq.dll</HintPath>
     </Reference>
     <Reference Include="System" />
-    <Reference Include="System.Configuration" />
-    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
     <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <Choose>
     <When Condition="('$(VisualStudioVersion)' == '10.0' or '$(VisualStudioVersion)' == '') and '$(TargetFrameworkVersion)' == 'v3.5'">
@@ -76,19 +70,26 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="..\CodeAnalysis\SolutionSuppressions.cs">
+    <Compile Include="..\codeanalysis\SolutionSuppressions.cs">
       <Link>CodeAnalysis\SolutionSuppressions.cs</Link>
     </Compile>
-    <Compile Include="..\Properties\SolutionInfo.Extension.cs">
-      <Link>Properties\SolutionInfo.Extension.cs</Link>
+    <Compile Include="..\Properties\SolutionInfo.cs">
+      <Link>Properties\SolutionInfo.cs</Link>
     </Compile>
     <Compile Include="CodeAnalysis\AssemblySuppressions.cs" />
-    <Compile Include="Configuration\XmlFormatElementTest.cs" />
-    <Compile Include="Configuration\XmlFormatSectionTest.cs" />
+    <Compile Include="Comparison\Extensions\AlphabeticallyComparableExtensionTest.cs" />
+    <Compile Include="Extensions\XNodeExtensionTest.cs" />
+    <Compile Include="Extensions\XAttributeExtensionTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Tools\Options\SettingsTest.cs" />
-    <Compile Include="Tools\Options\XmlFormatSettingCollectionTest.cs" />
-    <Compile Include="Tools\Options\XmlFormatSettingTest.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <CodeAnalysisDictionary Include="CodeAnalysis\AssemblyDictionary.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <CodeAnalysisDictionary Include="..\codeanalysis\SolutionDictionary.xml">
+      <Link>CodeAnalysis\SolutionDictionary.xml</Link>
+      <SubType>Designer</SubType>
+    </CodeAnalysisDictionary>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\HansKindberg.snk">
@@ -97,22 +98,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <CodeAnalysisDictionary Include="CodeAnalysis\AssemblyDictionary.xml" />
-  </ItemGroup>
-  <ItemGroup>
-    <CodeAnalysisDictionary Include="..\CodeAnalysis\SolutionDictionary.xml">
-      <Link>CodeAnalysis\SolutionDictionary.xml</Link>
-    </CodeAnalysisDictionary>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\HansKindberg.VisualStudio.Extensions.XmlFormatter\HansKindberg.VisualStudio.Extensions.XmlFormatter.csproj">
-      <Project>{90ee708f-d39e-4f23-ac5c-4fc8672256fd}</Project>
-      <Name>HansKindberg.VisualStudio.Extensions.XmlFormatter</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\HansKindberg.Xml.Formatting\HansKindberg.Xml.Formatting.csproj">
-      <Project>{a8ba8dd9-bcf3-4213-8b18-00cff0c016f6}</Project>
-      <Name>HansKindberg.Xml.Formatting</Name>
-    </ProjectReference>
     <ProjectReference Include="..\HansKindberg.Xml.Linq\HansKindberg.Xml.Linq.csproj">
       <Project>{702afeab-a250-482d-bd11-8a2168bbc5c5}</Project>
       <Name>HansKindberg.Xml.Linq</Name>
@@ -122,7 +107,6 @@
       <Name>HansKindberg</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>
@@ -143,7 +127,7 @@
   </Choose>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <Import Project="$(SolutionDir)\.nuget\nuget.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

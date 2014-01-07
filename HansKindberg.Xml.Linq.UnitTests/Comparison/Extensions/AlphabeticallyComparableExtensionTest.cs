@@ -3,7 +3,7 @@ using HansKindberg.Xml.Linq.Comparison;
 using HansKindberg.Xml.Linq.Comparison.Extensions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace HansKindberg.Xml.Linq.Tests.Comparison.Extensions
+namespace HansKindberg.Xml.Linq.UnitTests.Comparison.Extensions
 {
 	[TestClass]
 	public class AlphabeticallyComparableExtensionTest

@@ -3,7 +3,7 @@ using System.Xml;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 
-namespace HansKindberg.Xml.Formatting.Tests
+namespace HansKindberg.Xml.Formatting.UnitTests
 {
 	[TestClass]
 	public class XmlFormatterTest

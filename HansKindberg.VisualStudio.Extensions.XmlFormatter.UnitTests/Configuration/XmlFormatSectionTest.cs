@@ -3,7 +3,7 @@ using System.Configuration;
 using HansKindberg.VisualStudio.Extensions.XmlFormatter.Configuration;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace HansKindberg.VisualStudio.Extensions.XmlFormatter.Tests.Configuration
+namespace HansKindberg.VisualStudio.Extensions.XmlFormatter.UnitTests.Configuration
 {
 	[TestClass]
 	public class XmlFormatSectionTest

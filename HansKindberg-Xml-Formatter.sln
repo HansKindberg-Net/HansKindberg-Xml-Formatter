@@ -31,10 +31,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{AF2156
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HansKindberg.Xml.Formatting", "HansKindberg.Xml.Formatting\HansKindberg.Xml.Formatting.csproj", "{A8BA8DD9-BCF3-4213-8B18-00CFF0C016F6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HansKindberg.Xml.Formatting.Tests", "HansKindberg.Xml.Formatting.Tests\HansKindberg.Xml.Formatting.Tests.csproj", "{83F62868-9AB1-4575-A47A-7277371D4842}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HansKindberg.VisualStudio.Extensions.XmlFormatter.Tests", "HansKindberg.VisualStudio.Extensions.XmlFormatter.Tests\HansKindberg.VisualStudio.Extensions.XmlFormatter.Tests.csproj", "{951D1DC0-EB3D-436F-A4AB-F4CC15EF850F}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HansKindberg.VisualStudio.Extensions.XmlFormatter", "HansKindberg.VisualStudio.Extensions.XmlFormatter\HansKindberg.VisualStudio.Extensions.XmlFormatter.csproj", "{90EE708F-D39E-4F23-AC5C-4FC8672256FD}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HansKindberg.Xml.Formatting.IntegrationTests", "HansKindberg.Xml.Formatting.IntegrationTests\HansKindberg.Xml.Formatting.IntegrationTests.csproj", "{87BED5A7-B200-4CFB-912B-8F2576C45A39}"
@@ -43,11 +39,15 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HansKindberg", "HansKindber
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HansKindberg.Xml.Linq", "HansKindberg.Xml.Linq\HansKindberg.Xml.Linq.csproj", "{702AFEAB-A250-482D-BD11-8A2168BBC5C5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HansKindberg.Xml.Linq.Tests", "HansKindberg.Xml.Linq.Tests\HansKindberg.Xml.Linq.Tests.csproj", "{DB839881-FF10-45B5-A93E-48000B136243}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HansKindberg.Xml.Linq.IntegrationTests", "HansKindberg.Xml.Linq.IntegrationTests\HansKindberg.Xml.Linq.IntegrationTests.csproj", "{4551D829-A756-4529-A0C2-748CDF89D327}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HansKindberg.Xml.Linq.ShimTests", "HansKindberg.Xml.Linq.ShimTests\HansKindberg.Xml.Linq.ShimTests.csproj", "{FF228C3C-958F-4F7A-89FB-7F3953AE8D42}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HansKindberg.VisualStudio.Extensions.XmlFormatter.UnitTests", "HansKindberg.VisualStudio.Extensions.XmlFormatter.UnitTests\HansKindberg.VisualStudio.Extensions.XmlFormatter.UnitTests.csproj", "{951D1DC0-EB3D-436F-A4AB-F4CC15EF850F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HansKindberg.Xml.Formatting.UnitTests", "HansKindberg.Xml.Formatting.UnitTests\HansKindberg.Xml.Formatting.UnitTests.csproj", "{83F62868-9AB1-4575-A47A-7277371D4842}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HansKindberg.Xml.Linq.UnitTests", "HansKindberg.Xml.Linq.UnitTests\HansKindberg.Xml.Linq.UnitTests.csproj", "{DB839881-FF10-45B5-A93E-48000B136243}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -59,14 +59,6 @@ Global
 		{A8BA8DD9-BCF3-4213-8B18-00CFF0C016F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A8BA8DD9-BCF3-4213-8B18-00CFF0C016F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A8BA8DD9-BCF3-4213-8B18-00CFF0C016F6}.Release|Any CPU.Build.0 = Release|Any CPU
-		{83F62868-9AB1-4575-A47A-7277371D4842}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{83F62868-9AB1-4575-A47A-7277371D4842}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{83F62868-9AB1-4575-A47A-7277371D4842}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{83F62868-9AB1-4575-A47A-7277371D4842}.Release|Any CPU.Build.0 = Release|Any CPU
-		{951D1DC0-EB3D-436F-A4AB-F4CC15EF850F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{951D1DC0-EB3D-436F-A4AB-F4CC15EF850F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{951D1DC0-EB3D-436F-A4AB-F4CC15EF850F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{951D1DC0-EB3D-436F-A4AB-F4CC15EF850F}.Release|Any CPU.Build.0 = Release|Any CPU
 		{90EE708F-D39E-4F23-AC5C-4FC8672256FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{90EE708F-D39E-4F23-AC5C-4FC8672256FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{90EE708F-D39E-4F23-AC5C-4FC8672256FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -83,10 +75,6 @@ Global
 		{702AFEAB-A250-482D-BD11-8A2168BBC5C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{702AFEAB-A250-482D-BD11-8A2168BBC5C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{702AFEAB-A250-482D-BD11-8A2168BBC5C5}.Release|Any CPU.Build.0 = Release|Any CPU
-		{DB839881-FF10-45B5-A93E-48000B136243}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DB839881-FF10-45B5-A93E-48000B136243}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DB839881-FF10-45B5-A93E-48000B136243}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DB839881-FF10-45B5-A93E-48000B136243}.Release|Any CPU.Build.0 = Release|Any CPU
 		{4551D829-A756-4529-A0C2-748CDF89D327}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{4551D829-A756-4529-A0C2-748CDF89D327}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4551D829-A756-4529-A0C2-748CDF89D327}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -95,6 +83,18 @@ Global
 		{FF228C3C-958F-4F7A-89FB-7F3953AE8D42}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FF228C3C-958F-4F7A-89FB-7F3953AE8D42}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FF228C3C-958F-4F7A-89FB-7F3953AE8D42}.Release|Any CPU.Build.0 = Release|Any CPU
+		{951D1DC0-EB3D-436F-A4AB-F4CC15EF850F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{951D1DC0-EB3D-436F-A4AB-F4CC15EF850F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{951D1DC0-EB3D-436F-A4AB-F4CC15EF850F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{951D1DC0-EB3D-436F-A4AB-F4CC15EF850F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{83F62868-9AB1-4575-A47A-7277371D4842}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{83F62868-9AB1-4575-A47A-7277371D4842}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{83F62868-9AB1-4575-A47A-7277371D4842}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{83F62868-9AB1-4575-A47A-7277371D4842}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DB839881-FF10-45B5-A93E-48000B136243}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DB839881-FF10-45B5-A93E-48000B136243}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DB839881-FF10-45B5-A93E-48000B136243}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DB839881-FF10-45B5-A93E-48000B136243}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
