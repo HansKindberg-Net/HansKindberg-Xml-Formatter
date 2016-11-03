@@ -1,12 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
 	<Metadata>
-		<Identity Id="8164dbd8-e088-44e1-b3c3-24004b378c7c" Version="1.0.0.0" Language="en-US" Publisher="Hans Kindberg - open source" />
+		<Identity Id="8164dbd8-e088-44e1-b3c3-24004b378c7c" Version="1.1.0" Language="en-US" Publisher="Hans Kindberg - open source" />
 		<DisplayName>Hans Kindberg - XML Formatter</DisplayName>
 		<Description xml:space="preserve">A XML formatter</Description>
 	</Metadata>
 	<Installation InstalledByMsi="false">
-		<InstallationTarget Id="Microsoft.VisualStudio.Pro" Version="[11.0,12.0]" />
+		<InstallationTarget Id="Microsoft.VisualStudio.Pro" Version="[12.0,]" />
+		<!-- <InstallationTarget Id="Microsoft.VisualStudio.Pro" Version="[11.0,12.0]" /> -->
 	</Installation>
 	<Dependencies>
 		<Dependency Id="Microsoft.Framework.NDP" DisplayName="Microsoft .NET Framework" d:Source="Manual" Version="4.5" />
