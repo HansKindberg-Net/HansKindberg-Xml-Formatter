@@ -27,4 +27,7 @@
 		<Rule Id="CA1823" Action="None" />
 		<Rule Id="CA2204" Action="None" />
 	</Rules>
+	<Rules AnalyzerId="Microsoft.CodeAnalysis.CSharp" RuleNamespace="Microsoft.CodeAnalysis.CSharp">
+		<Rule Id="CS0618" Action="Warning" />
+	</Rules>
 </RuleSet>
